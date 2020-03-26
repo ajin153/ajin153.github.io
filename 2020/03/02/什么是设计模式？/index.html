@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="ajin153" />
+  
+  
+  <title>什么是设计模式？ | AJin153</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="设计模式,第一周," />
+  
+
+  
+  <meta name="description" content="ajin153的小站">
+
+  
+
+  
+    <script src="//cdn.jsdelivr.net/npm/leancloud-storage@3.11.1/dist/av-min.js" async></script>
+  
+
+  
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+  
+
+  
+
+  
+
+  <script>
+  // theme-ad's config script
+  // it can be used in every script
+  
+  window.AD_CONFIG = {
+    leancloud: {"appid":"a4YDSwiL84TWNQ5ps5h7M7B4-gzGzoHsz","appkey":"VSh46nIWt261HGCt9r0dXIKF","comment":false,"count":true},
+    welcome: {"enable":false,"interval":30},
+    start_time: "2020-02-25",
+    passwords: ["efe07af7441da2b69c4a41e42e73be4db47f66010a56900788a458354a7373ec", ],
+    is_post: true,
+    lock: false,
+    author: "ajin153",
+    share: {"twitter":false,"facebook":false,"weibo":false,"qq":false,"wechat":false},
+    mathjax: true,
+    page_type: "",
+    root: "/"
+  };
+</script>
+
+  
+<script src="/vendor/sha256.min.js"></script>
+<script src="/js/auth.js"></script>
+<script src="/js/index.js"></script>
+<script src="/vendor/qrcode.min.js"></script>
+
+
+  
+    <link rel="icon" href="/images/favicon.ico">
+    <link rel="apple-touch-icon" href="/images/touch-icon.png">
+  
+
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+  
+<link rel="stylesheet" href="/css/index.css">
+<link rel="stylesheet" href="/styles/components/highlight/highlight.css">
+
+
+  
+<meta name="generator" content="Hexo 4.2.0"></head>
+  <body>
+    <header class="site-header">
+  <div class="site-header-brand">
+    
+      <span class="site-header-brand-title">
+        <a href="/">AJin153</a>
+      </span>
+    
+    
+      <span class="site-header-brand-motto"> | 不骄不躁，不气不馁，不卑不亢</span>
+    
+  </div>
+  <div class="site-header-right">
+    <nav class="site-header-navigation">
+      
+        <a href="/" target="_self">首页</a>
+      
+        <a href="/archives/" target="_self">归档</a>
+      
+        <a href="/tags/" target="_self">标签</a>
+      
+        <a href="/categories/" target="_self">分类</a>
+      
+        <a href="/friends/" target="_self">友链</a>
+      
+        <a href="/about/" target="_self">关于</a>
+      
+    </nav>
+    <div class="site-header-btn">
+      
+        <a href="https://github.com/ajin153/" target="_blank" id="site-github">
+          <i class="fa fa-github-alt"></i>
+        </a>
+      
+      <a href="javascript:void(0);" id="site-search">
+        <i class="fa fa-search"></i>
+      </a>
+      <a href="javascript:void(0);" id="site-nav-btn">
+        <i class="fa fa-ellipsis-v"></i>
+      </a>
+    </div>
+  </div>
+</header>
+<nav class="table-content" id="site-nav">
+  <div class="table-content-title">
+    <span>导航</span>
+  </div>
+  <div class="table-content-main">
+    <ol class="toc">
+      
+        <li class="toc-item">
+          <a href="/" target="_self">
+            首页
+          </a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="/archives/" target="_self">
+            归档
+          </a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="/tags/" target="_self">
+            标签
+          </a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="/categories/" target="_self">
+            分类
+          </a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="/friends/" target="_self">
+            友链
+          </a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="/about/" target="_self">
+            关于
+          </a>
+        </li>
+      
+    </ol>
+  </div>
+</nav>
+<div id="site-process"></div>
+    <main>
+      
+  <div class="passage">
+  <div class="passage-meta">
+    <span>
+      <i class="fa fa-calendar"></i>2020-03-02
+    </span>
+    
+    
+      <span>
+        | <i class="fa fa-unlock-alt"></i>UNLOCK
+      </span>
+    
+  </div>
+  <h1 class="passage-title">
+    什么是设计模式？
+  </h1>
+  
+  <article class="passage-article">
+    <h3 id="1、什么是设计模式？"><a href="#1、什么是设计模式？" class="headerlink" title="1、什么是设计模式？"></a>1、什么是设计模式？</h3><ul>
+<li>设计模式是一套被反复使用、多数人知晓的、经过分类的、代码设计经验的总结。</li>
+</ul>
+<h3 id="2、为什么要使用设计模式？"><a href="#2、为什么要使用设计模式？" class="headerlink" title="2、为什么要使用设计模式？"></a>2、为什么要使用设计模式？</h3><ul>
+<li>使用设计模式是为了代码的可重用性、让代码更容易被他人理解、保证代码可靠性。</li>
+</ul>
+<h3 id="3、一个设计模式有哪四个基本要素？"><a href="#3、一个设计模式有哪四个基本要素？" class="headerlink" title="3、一个设计模式有哪四个基本要素？"></a>3、一个设计模式有哪四个基本要素？</h3><ul>
+<li><strong>模式名称(pattern name)</strong>:描述模式的问题、解决方案和效果。</li>
+<li><strong>问题(problem)</strong>:描述应该在何时使用模式。</li>
+<li><strong>解决方案(solution)</strong>:描述了设计的组成成分，它们之间的小虎关系及各自的职责和协作方式。</li>
+<li><strong>效果(consequences)</strong>:描述了模式应用的效果及使用模式应权衡的问题。</li>
+</ul>
+<h3 id="4、按照目的准则，可将设计模式分为哪三类？"><a href="#4、按照目的准则，可将设计模式分为哪三类？" class="headerlink" title="4、按照目的准则，可将设计模式分为哪三类？"></a>4、按照目的准则，可将设计模式分为哪三类？</h3><ul>
+<li><strong>创建型(Creational)</strong>:与对象的创建有关。</li>
+<li><strong>结构型(Structural)</strong>:处理类或对象的组合。</li>
+<li><strong>行为型(Behavioral)</strong>:对类或对象怎样交互和怎样分配职责进行描述。</li>
+</ul>
+<h3 id="4-1、按照范围准则，可将设计模式分为哪两类？"><a href="#4-1、按照范围准则，可将设计模式分为哪两类？" class="headerlink" title="4.1、按照范围准则，可将设计模式分为哪两类？"></a>4.1、按照范围准则，可将设计模式分为哪两类？</h3><ul>
+<li><strong>类模式</strong>:处理类和子类之间的关系，这些关系通过继承建立，是静态的。</li>
+<li><strong>对象模式</strong>:处理对象之间的关系，这些关系在运行时刻是变化的，更具动态性。</li>
+</ul>
+<p><img src="/2020/03/02/%E4%BB%80%E4%B9%88%E6%98%AF%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%EF%BC%9F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%88%86%E7%B1%BB%E5%9B%BE.png" alt="设计模式分类图"></p>
+<h3 id="5、面向对象设计的七大原则？"><a href="#5、面向对象设计的七大原则？" class="headerlink" title="5、面向对象设计的七大原则？"></a>5、面向对象设计的七大原则？</h3><ul>
+<li><strong>单一职责原则(Single Responsibility Principle, SRP)</strong>：<br>一个类被改变的原因不能超过一个。<br>一个类/接口/方法只负责一项职责或职能。</li>
+<li><strong>开闭原则(Open Closed Principle, OCP)</strong>：<br>一个软件实体如类，模块和函数应该对扩展开放，对修改关闭。</li>
+<li><strong>里氏代换原则(Liskov Substitution Principle, LSP)</strong>：<br>子类型必须能够替换掉他们的父类型。</li>
+<li><strong>依赖倒转原则(Dependence Inversion Principle, DIP)</strong>：<br>上层模块不应该依赖底层模块，它们都应该依赖于抽象。<br>抽象不应该依赖于细节，细节应该依赖于抽象。</li>
+<li><strong>接口隔离原则((Interface Segregation Principle, ISP))</strong>：<br>客户端不应该依赖它不需要的接口。<br>类间的依赖关系应该建立在最小的接口上。</li>
+<li><strong>合成复用原则(Composite Reuse Principle, CRP)</strong>：<br>尽量使用对象组合/聚合, 而不是继承关系达到软件复用的目的</li>
+<li><strong>迪米特法则(Law of Demeter，LoD)</strong>：<br>一个对象应该对其他对象保持最少的了解，又叫作最少知识原则(Least Knowledge Principle, LKP)。</li>
+</ul>
+
+  </article>
+  <aside class="table-content" id="site-toc">
+  <div class="table-content-title">
+    <i class="fa fa-arrow-right fa-lg" id="site-toc-hide-btn"></i>
+    <span>目录</span>
+  </div>
+  <div class="table-content-main">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、什么是设计模式？"><span class="toc-text">1、什么是设计模式？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、为什么要使用设计模式？"><span class="toc-text">2、为什么要使用设计模式？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、一个设计模式有哪四个基本要素？"><span class="toc-text">3、一个设计模式有哪四个基本要素？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、按照目的准则，可将设计模式分为哪三类？"><span class="toc-text">4、按照目的准则，可将设计模式分为哪三类？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1、按照范围准则，可将设计模式分为哪两类？"><span class="toc-text">4.1、按照范围准则，可将设计模式分为哪两类？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、面向对象设计的七大原则？"><span class="toc-text">5、面向对象设计的七大原则？</span></a></li></ol>
+  </div>
+</aside>
+  
+    <aside class="passage-copyright">
+      <div>本文作者: AJin153</div>
+      
+        <div>
+          原文链接: 
+          <a href="" target="_blank">http://ajin153.github.io/2020/03/02/%E4%BB%80%E4%B9%88%E6%98%AF%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%EF%BC%9F/</a>
+        </div>
+      
+      <div>
+        版权声明: 本博客所有文章除特别声明外, 均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> 许可协议. 转载请注明出处!
+      </div>
+    </aside>
+  
+  
+    <div class="passage-tags">
+     
+      <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"><i class="fa fa-tags"></i>设计模式</a>
+     
+      <a href="/tags/%E7%AC%AC%E4%B8%80%E5%91%A8/"><i class="fa fa-tags"></i>第一周</a>
+    
+    </div>
+  
+</div>
+
+    </main>
+    
+    <div class="site-footer-wrapper">
+  <footer class="site-footer">
+    
+      
+        <div class="site-footer-col">
+          <h5 class="site-footer-title">博客推荐</h5>
+          
+            <span class="site-footer-item">
+              <a href="https://godbmw.com/" target="_blank">GodBMW</a>
+            </span>
+          
+            <span class="site-footer-item">
+              <a href="http://ruanyifeng.com/" target="_blank">阮一峰的个人网站</a>
+            </span>
+          
+        </div>
+      
+        <div class="site-footer-col">
+          <h5 class="site-footer-title">系列教程</h5>
+          
+            <span class="site-footer-item">
+              <a href="https://godbmw.com/categories/webpack4%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B/" target="_blank">webpack4系列教程</a>
+            </span>
+          
+            <span class="site-footer-item">
+              <a href="https://godbmw.com/design-patterns/" target="_blank">设计模式手册</a>
+            </span>
+          
+        </div>
+      
+    
+    <div class="site-footer-info">
+      <i class="fa fa-clock-o"></i> 本站已稳定运行<span id="site-time"></span>
+    </div>
+    
+      <div class="site-footer-info">
+        <i class="fa fa-paw"></i> 您是本站第 <span id="site-count"></span> 位访客
+      </div>
+    
+    
+      <div class="site-footer-info">
+        <i class="fa fa-at"></i> Email: yuanxin.me@gmail.com
+      </div>
+    
+    <div class="site-footer-info">
+      <i class="fa fa-copyright"></i> 
+      2019 <a href="https://github.com/dongyuanxin/theme-ad/" target="_blank">Theme-AD</a>.
+      Created by <a href="https://godbmw.com/" target="_blank">GodBMW</a>.
+      All rights reserved.
+    </div>
+  </footer>
+</div>
+    <div id="site-layer" style="display:none;">
+  <div class="site-layer-content">
+    <div class="site-layer-header">
+      <span class="site-layer-header-title" id="site-layer-title"></span>
+      <i class="fa fa-close" id="site-layer-close"></i>
+    </div>
+    <div class="site-layer-body" id="site-layer-container">
+      <div class="site-layer-input" id="site-layer-search" style="display: none;">
+        <div class="site-layer-input-choose">
+          <a href="javascript:void(0);" title="Change Search Engine">Google</a>
+        </div>
+        <input type="text">
+        <i class="fa fa-search"></i>
+      </div>
+      
+        <div class="site-layer-reward" id="site-layer-reward" style="display: none;">
+          
+            <div>
+              <img src="/images/wechat.png" alt="WeChat">
+              
+                <p>WeChat</p>
+              
+            </div>
+          
+            <div>
+              <img src="/images/alipay.png" alt="AliPay">
+              
+                <p>AliPay</p>
+              
+            </div>
+          
+        </div>
+      
+      <div id="site-layer-welcome" style="display:none;"></div>
+    </div>
+  </div>
+</div>
+    
+
+<div class="bottom-bar">
+  <div class="bottom-bar-left">
+    <a href="/2020/03/09/%E4%BB%80%E4%B9%88%E6%98%AFTCP%EF%BC%9F/" data-enable="true">
+      <i class="fa fa-arrow-left"></i>
+    </a>
+    <a href="javascript:void(0);" data-enable="false">
+      <i class="fa fa-arrow-right"></i>
+    </a>
+  </div>
+  <div class="bottom-bar-right">
+    <a href="javascript:void(0);" data-enable="true" id="site-toc-show-btn">
+      <i class="fa fa-bars"></i>
+    </a>
+    
+    <a href="javascript:void(0);" id="site-toggle-share-btn">
+      <i class="fa fa-share-alt"></i>
+    </a>
+    
+      <a href="javascript:void(0);" id="site-reward">
+        <i class="fa fa-thumbs-up"></i>
+      </a>
+    
+    <a href="javascript:void(0);" id="back-top-btn">
+      <i class="fa fa-chevron-up"></i>
+    </a>
+  </div>
+</div>
+    <div id="share-btn">
+  
+  
+  
+  
+  
+</div>
+    
+  <script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+  <script async>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', '');
+  </script>
+
+
+
+  <script async>
+  (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      }
+      else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+  })();
+  </script>
+
+
+
+
+    
+  </body>
+</html>
